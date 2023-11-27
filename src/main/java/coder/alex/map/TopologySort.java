@@ -21,6 +21,11 @@ public class TopologySort {
         q.add(entry.getKey());
       }
     }
+
+    for (int i = 0; i < q.size(); i++) {
+      inDegree.remove(((LinkedList) q).get(i));
+    }
+
     while (!q.isEmpty()) {
       int sv = q.poll();
       output.add(sv);
@@ -28,6 +33,9 @@ public class TopologySort {
         int count = inDegree.get(ev);
         if (--count == 0) {
           q.add(ev);
+          inDegree.remove(ev);
+        } else {
+          inDegree.put(ev, count);
         }
       }
     }
