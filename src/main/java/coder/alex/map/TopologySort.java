@@ -1,6 +1,6 @@
 package coder.alex.map;
 
-import javafx.util.Pair;
+import sun.reflect.Reflection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,8 +72,7 @@ public class TopologySort {
   }
 
   public static void main(String[] args) {
-    int[][] edges = {{1, 2}, {2, 3}, {4, 5}, {5, 6}, {1, 4}};
-    System.out.println(new TopologySort().topologySort(edges));
+    System.out.println(Reflection.getCallerClass(1));
   }
 
 }
