@@ -24,7 +24,7 @@ public class BinaryTree {
       }
     }
   }
-  
+
   public void pushLeft(TreeNode root) {
     while(root.left != null) {
       stack.push(root);
